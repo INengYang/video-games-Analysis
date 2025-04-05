@@ -35,7 +35,7 @@ top_games = df_clean.sort_values(by='Global_Sales', ascending=False).head(10)
 print("\n全球最畅销的10款游戏:\n", top_games[['Name', 'Platform', 'Year', 'Global_Sales']])
 
 
-# 分析2：各游戏类型的全球销售额占比
+# 分析2：各游戏类型的全球销售额排名
 genre_sales = df_clean.groupby('Genre')['Global_Sales'].sum().sort_values(ascending=False)
 plt.figure(figsize=(12, 6))
 sns.barplot(x=genre_sales.values, y=genre_sales.index, palette='viridis')
